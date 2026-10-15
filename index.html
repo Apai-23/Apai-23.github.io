@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Francisco Arce Aguilar — PMP® and Agile-certified program leader across product development, NPI, global delivery, software delivery and digital transformation." />
+  <meta name="description" content="Francisco Arce Aguilar — MBA, PMP® & Google Agile Certified Technical Program Manager. Helping engineering, product, and operations teams turn complex programs into clear execution." />
   <meta name="theme-color" content="#08111f" />
-  <title>Francisco Arce Aguilar | Technical Program Management</title>
+  <title>Francisco Arce Aguilar | Technical Program Management & Product Delivery</title>
   <link rel="canonical" href="https://apai-23.github.io/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Francisco Arce | Portfolio" />
   <meta property="og:url" content="https://apai-23.github.io/" />
   <meta property="og:title" content="Francisco Arce Aguilar | Technical Program Management" />
-  <meta property="og:description" content="Global program leadership across product development, NPI, software delivery, manufacturing and digital transformation." />
+  <meta property="og:description" content="Helping global teams bring structure, clarity, and predictable delivery to complex technical programs." />
   <meta property="og:image" content="https://apai-23.github.io/linkedin-preview-v1.jpg" />
   <meta property="og:image:secure_url" content="https://apai-23.github.io/linkedin-preview-v1.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
@@ -20,17 +20,99 @@
   <meta property="og:image:alt" content="Francisco Arce Aguilar — Technical Program Management portfolio" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Francisco Arce Aguilar | Technical Program Management" />
-  <meta name="twitter:description" content="Program leadership, product delivery, digital transformation and measurable execution across global technical programs." />
+  <meta name="twitter:description" content="Helping global teams bring structure, clarity, and predictable delivery to complex technical programs." />
   <meta name="twitter:image" content="https://apai-23.github.io/linkedin-preview-v1.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Clean progressive disclosure & UX enhancements that blend with existing styles.css */
+    .lang-switch-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #e2e8f0;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .lang-switch-btn:hover {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: rgba(56, 189, 248, 0.45);
+      color: #fff;
+    }
+    .expand-trigger-wrap {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .btn-expand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #cbd5e1;
+      padding: 0.75rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .btn-expand:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+    .collapsible-drawer {
+      display: none;
+      margin-top: 2rem;
+      animation: fadeIn 0.35s ease;
+    }
+    .collapsible-drawer.open {
+      display: block;
+    }
+    .card-detail-toggle {
+      margin-top: 0.85rem;
+      background: none;
+      border: none;
+      color: #38bdf8;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .card-detail-toggle:hover {
+      text-decoration: underline;
+    }
+    .card-extra-detail {
+      display: none;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    .card-extra-detail.open {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
   <div class="page-glow glow-a"></div>
   <div class="page-glow glow-b"></div>
 
+  <!-- CLEAN, MINIMAL NAVIGATION -->
   <header class="site-header" id="top">
     <div class="shell nav-wrap">
       <a class="brand" href="#top" aria-label="Francisco Arce home">
@@ -39,38 +121,44 @@
       </a>
       <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
       <nav class="site-nav" aria-label="Main navigation">
-        <a href="#work">Selected Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#tech">Tech & Credentials</a>
-        <a class="nav-cta" href="#contact">Contact</a>
+        <a href="#how-i-help" data-en="How I Help" data-es="Cómo Ayudo">How I Help</a>
+        <a href="#work" data-en="Selected Impact" data-es="Casos Clave">Selected Impact</a>
+        <a href="#tech" data-en="Toolkit" data-es="Herramientas">Toolkit</a>
+        <button type="button" class="lang-switch-btn" id="langSwitch" onclick="toggleLanguage()">ES 🇲🇽</button>
+        <a class="nav-cta" href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
+    <!-- HERO SECTION: EMPATHETIC, CLEAN, PROBLEM-SOLVER FOCUS -->
     <section class="hero shell" aria-labelledby="hero-title">
       <div class="hero-copy reveal">
-        <div class="eyebrow"><span class="status-dot"></span> PMP® · Program Management Lead · Aguascalientes, Mexico</div>
-        <p class="hero-kicker">TECHNICAL PROGRAM MANAGEMENT · PRODUCT DELIVERY · DIGITAL TRANSFORMATION</p>
+        <div class="eyebrow">
+          <span class="status-dot"></span>
+          <span data-en="MBA · PMP® · Google Agile · Aguascalientes, MX (Remote / Hybrid)" data-es="MBA · PMP® · Google Agile · Aguascalientes, MX (Remoto / Híbrido)">MBA · PMP® · Google Agile · Aguascalientes, MX (Remote / Hybrid)</span>
+        </div>
+        <p class="hero-kicker" data-en="TECHNICAL PROGRAM MANAGEMENT · PRODUCT DELIVERY · DIGITAL GOVERNANCE" data-es="TECHNICAL PROGRAM MANAGEMENT · ENTREGA DE PRODUCTO · GOBERNANZA DIGITAL">TECHNICAL PROGRAM MANAGEMENT · PRODUCT DELIVERY · DIGITAL GOVERNANCE</p>
         <h1 id="hero-title">Francisco<br><span>Arce Aguilar</span></h1>
         <div class="role-line" aria-label="Professional headline">
-          <span class="role-static">I turn</span>
-          <span class="role-rotator" id="roleRotator">complex programs into clear execution.</span>
+          <span class="role-static" data-en="I help your team turn" data-es="Ayudo a tu equipo a convertir">I help your team turn</span>
+          <span class="role-rotator" id="roleRotator" data-en="complex programs into clear execution." data-es="proyectos complejos en entregas claras.">complex programs into clear execution.</span>
         </div>
-        <p class="hero-summary">
-          PMP® and Agile-certified program leader with 10+ years driving complex global initiatives across hardware, software, mechanical, quality and manufacturing teams. I align matrixed stakeholders, negotiate scope trade-offs and use technical depth and data to keep high-stakes launches moving.
+        <p class="hero-summary" data-en="When global launches, software sprints, or cross-border teams get stuck, I step in to align engineering and business, replace manual chaos with live visibility, and help everyone deliver on time without burning out." data-es="Cuando un lanzamiento global, un producto digital o un equipo multifuncional tiene fricción, entro para alinear ingeniería y negocio, reemplazar reportes manuales con visibilidad en tiempo real y lograr entregas a tiempo.">
+          When global launches, software sprints, or cross-border teams get stuck, I step in to align engineering and business, replace manual chaos with live visibility, and help everyone deliver on time without burning out.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#work">See selected work <span>↗</span></a>
-          <a class="btn btn-secondary" href="https://www.linkedin.com/in/francisco-arce-aguilar" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+          <a class="btn btn-primary" href="#how-i-help"><span data-en="See how I can help your team" data-es="Ver cómo puedo apoyar a tu equipo">See how I can help your team</span> <span>↗</span></a>
+          <a class="btn btn-secondary" href="#contact"><span data-en="Contact" data-es="Contacto">Contact</span></a>
         </div>
         <div class="quick-meta">
-          <span>English / Spanish</span>
-          <span>Mexico · USA · Europe · China</span>
-          <span>Global & distributed teams</span>
+          <span data-en="14+ Years Experience" data-es="+14 Años de Experiencia">14+ Years Experience</span>
+          <span>USA · China · Germany · Mexico</span>
+          <span data-en="Hardware, Software & AI Teams" data-es="Equipos de Hardware, Software e IA">Hardware, Software & AI Teams</span>
         </div>
       </div>
 
+      <!-- PRESERVED ORBITAL PHOTO CARD FROM YOUR ORIGINAL DESIGN -->
       <div class="hero-visual reveal delay-1">
         <div class="orbital-card">
           <div class="orbit orbit-one"></div>
@@ -79,41 +167,54 @@
             <img src="francisco-arce.webp" alt="Francisco Arce Aguilar" loading="eager" fetchpriority="high">
           </div>
           <div class="float-card card-one">
-            <strong>20+</strong>
-            <span>Programs</span>
+            <strong>14+</strong>
+            <span data-en="Years Exp." data-es="Años Exp.">Years Exp.</span>
           </div>
           <div class="float-card card-two">
-            <strong>9</strong>
-            <span>OEM accounts</span>
+            <strong>20+</strong>
+            <span data-en="Active Programs" data-es="Programas">Active Programs</span>
           </div>
           <div class="float-card card-three">
-            <strong>$20M</strong>
-            <span>CAPEX / program</span>
+            <strong>PMP®</strong>
+            <span data-en="& MBA" data-es="& MBA">& MBA</span>
           </div>
           <div class="float-card card-four">
-            <strong>PMP®</strong>
-            <span>Certified</span>
+            <strong>Agile</strong>
+            <span data-en="Product & NPI" data-es="Producto y NPI">Product & NPI</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="stats-bar" aria-label="Selected career outcomes">
+    <!-- LIGHT, SCANNABLE TRUST BAR (INSTEAD OF HEAVY TEXT) -->
+    <section class="stats-bar" aria-label="Key pillars of value">
       <div class="shell stats-grid">
-        <div class="stat reveal"><strong>7 weeks</strong><span>AI product MVP delivered</span></div>
-        <div class="stat reveal delay-1"><strong>$1.8M</strong><span>net profit turnaround</span></div>
-        <div class="stat reveal delay-2"><strong>37 → 0</strong><span>customer deviations eliminated</span></div>
-        <div class="stat reveal delay-3"><strong>$70K</strong><span>supplier/material savings</span></div>
+        <div class="stat reveal">
+          <strong data-en="Clarity" data-es="Claridad">Clarity</strong>
+          <span data-en="100% live Power BI & Jira visibility" data-es="Visibilidad en vivo con Power BI y Jira">100% live Power BI & Jira visibility</span>
+        </div>
+        <div class="stat reveal delay-1">
+          <strong data-en="Speed" data-es="Velocidad">Speed</strong>
+          <span data-en="From Sprint 0 to AI MVP in 7 weeks" data-es="De Sprint 0 a MVP de IA en 7 semanas">From Sprint 0 to AI MVP in 7 weeks</span>
+        </div>
+        <div class="stat reveal delay-2">
+          <strong data-en="Rescue" data-es="Rescate">Rescue</strong>
+          <span data-en="$1.8M turnaround on critical accounts" data-es="Rescate de cuentas críticas ($1.8M USD)">$1.8M turnaround on critical accounts</span>
+        </div>
+        <div class="stat reveal delay-3">
+          <strong data-en="Bridge" data-es="Puente Global">Bridge</strong>
+          <span data-en="Seamless US, China, EU & MX alignment" data-es="Alineación EE.UU., China, Europa y MX">Seamless US, China, EU & MX alignment</span>
+        </div>
       </div>
     </section>
 
-
-    <section class="section shell" id="work">
+    <!-- SECTION 01: EMPATHY-DRIVEN VALUE PROPOSITION (WHAT PROBLEMS I SOLVE FOR YOU) -->
+    <section class="section shell" id="how-i-help">
       <div class="section-heading reveal">
         <span class="section-index">01</span>
         <div>
-          <p class="eyebrow-text">Selected work</p>
-          <h2>Three examples of how I lead, unblock and deliver.</h2>
+          <p class="eyebrow-text" data-en="How I can help your organization" data-es="Cómo puedo apoyar a tu organización">How I can help your organization</p>
+          <h2 data-en="Three challenges I love solving for teams." data-es="Tres problemas que resuelvo para tu equipo.">Three challenges I love solving for teams.</h2>
         </div>
       </div>
 
@@ -121,176 +222,221 @@
         <article class="transition-card reveal">
           <span class="transition-step">01</span>
           <div>
-            <p class="transition-status">CURRENT · SOFTWARE PRODUCT DELIVERY</p>
-            <h3>AI Learning Path Generator · Chingu</h3>
-            <p>Product Owner + Scrum Master for an AI-powered career learning platform. Led product vision, backlog and sprint execution across the UK, Nigeria, New York, China and Mexico, launching the MVP in 7 weeks with zero milestone delays.</p>
+            <p class="transition-status" data-en="DIGITAL GOVERNANCE & VISIBILITY" data-es="GOBERNANZA DIGITAL Y VISIBILIDAD">DIGITAL GOVERNANCE & VISIBILITY</p>
+            <h3 data-en="Replacing manual reporting with real-time clarity" data-es="Cambiar reportes manuales por claridad en tiempo real">Replacing manual reporting with real-time clarity</h3>
+            <p data-en="If your team spends hours updating spreadsheets and slides, I build connected ecosystems (Power BI, Jira, MS Project, SAP) so leadership sees risks and bottlenecks instantly." data-es="Si tu equipo pierde horas haciendo presentaciones manuales, construyo tableros conectados (Power BI, Jira, MS Project, SAP) para ver riesgos y decisiones en tiempo real.">If your team spends hours updating spreadsheets and slides, I build connected ecosystems (Power BI, Jira, MS Project, SAP) so leadership sees risks and bottlenecks instantly.</p>
           </div>
         </article>
 
         <article class="transition-card reveal delay-1">
           <span class="transition-step">02</span>
           <div>
-            <p class="transition-status">DEPLOYED + EXPANDING · DIGITAL OPERATIONS</p>
-            <h3>Program Portfolio Operating System · Minth</h3>
-            <p>Coordinate 20+ active NPI programs as the technical interface across hardware, software, mechanical, quality and manufacturing teams. Built a Power BI + MS Project executive governance model for portfolio health, risks and trade-off decisions.</p>
+            <p class="transition-status" data-en="AGILE & CROSS-FUNCTIONAL DELIVERY" data-es="ENTREGA ÁGIL Y MULTIFUNCIONAL">AGILE & CROSS-FUNCTIONAL DELIVERY</p>
+            <h3 data-en="Connecting software, hardware, and business teams" data-es="Conectar equipos de software, ingeniería y negocio">Connecting software, hardware, and business teams</h3>
+            <p data-en="I speak the language of developers, plant engineers, and executives. I structure backlogs, remove blockers, and keep distributed teams moving toward the same goal." data-es="Hablo el idioma de los desarrolladores, ingenieros de planta y directivos. Estructuro prioridades, destrabo cuellos de botella y mantengo a equipos remotos enfocados.">I speak the language of developers, plant engineers, and executives. I structure backlogs, remove blockers, and keep distributed teams moving toward the same goal.</p>
           </div>
         </article>
 
         <article class="transition-card reveal delay-2">
           <span class="transition-step">03</span>
           <div>
-            <p class="transition-status">DELIVERED · GLOBAL TECHNICAL PROGRAM</p>
-            <h3>Mercedes-Benz Program Recovery · Tenneco</h3>
-            <p>Led a USD $10M–$20M global Mercedes-Benz program across China, Germany, the USA and Mexico. Reworked quality decision flows and preventive root-cause engineering, driving a $1.8M net profit turnaround and eliminating customer deviations from 37 to zero.</p>
+            <p class="transition-status" data-en="HIGH-STAKES LAUNCHES & TURNAROUNDS" data-es="LANZAMIENTOS CRÍTICOS Y CONTENCIÓN">HIGH-STAKES LAUNCHES & TURNAROUNDS</p>
+            <h3 data-en="Stabilizing delayed or escalated programs" data-es="Estabilizar programas complejos o en escalación">Stabilizing delayed or escalated programs</h3>
+            <p data-en="When a launch is under pressure from supply chain delays or customer escalations, I bring calm structure, protect your budget (CAPEX/P&L), and rebuild customer trust." data-es="Cuando un proyecto tiene retrasos de proveedores o presión del cliente, aporto estructura, protejo la rentabilidad (CAPEX/P&L) y recupero la confianza del cliente.">When a launch is under pressure from supply chain delays or customer escalations, I bring calm structure, protect your budget (CAPEX/P&L), and rebuild customer trust.</p>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="section section-alt" id="experience">
+    <!-- SECTION 02: SELECTED IMPACT (SHORT & SCANNABLE BY DEFAULT + CLICK TO EXPAND) -->
+    <section class="section section-alt" id="work">
       <div class="shell">
         <div class="section-heading reveal">
           <span class="section-index">02</span>
           <div>
-            <p class="eyebrow-text">Experience</p>
-            <h2>Career progression with measurable delivery.</h2>
+            <p class="eyebrow-text" data-en="Selected Impact" data-es="Impacto Seleccionado">Selected Impact</p>
+            <h2 data-en="Recent snapshots of how I work." data-es="Ejemplos recientes de trabajo en equipo.">Recent snapshots of how I work.</h2>
           </div>
         </div>
 
-        <div class="timeline">
-          <article class="timeline-item reveal">
-            <div class="timeline-date">2026 — Present</div>
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-head">
-                <div><h3>Product Owner / Scrum Master</h3><p>Chingu.io · Global distributed team</p></div>
-                <span>Current</span>
+        <div class="transition-grid">
+          <!-- Snapshot 1 -->
+          <article class="transition-card reveal">
+            <span class="transition-step">AI</span>
+            <div>
+              <p class="transition-status">CHINGU.IO · PRODUCT OWNER & SCRUM MASTER</p>
+              <h3 data-en="AI Learning Platform (Sprint 0 to MVP in 7 Weeks)" data-es="Plataforma de IA (De Sprint 0 a MVP en 7 Semanas)">AI Learning Platform (Sprint 0 to MVP in 7 Weeks)</h3>
+              <p data-en="Guided a distributed team across the UK, Nigeria, NY, China, and Mexico to launch an AI web product on schedule with zero milestone delays." data-es="Acompañé a un equipo distribuido en Reino Unido, Nigeria, NY, China y México para lanzar una plataforma de IA en 7 semanas sin retrasos.">Guided a distributed team across the UK, Nigeria, NY, China, and Mexico to launch an AI web product on schedule with zero milestone delays.</p>
+              <button type="button" class="card-detail-toggle" onclick="toggleCardDetail(this)">
+                <span data-en="+ View how we did it" data-es="+ Ver cómo lo logramos">+ View how we did it</span>
+              </button>
+              <div class="card-extra-detail">
+                <p data-en="Set up Jira & GitHub Projects workflows from day one, facilitated asynchronous Scrum events, and prioritized the backlog around core user value to avoid scope creep." data-es="Configuramos flujos en Jira y GitHub Projects desde el día uno, facilitamos ceremonias Scrum asíncronas y priorizamos el backlog para evitar retrabajos.">Set up Jira & GitHub Projects workflows from day one, facilitated asynchronous Scrum events, and prioritized the backlog around core user value to avoid scope creep.</p>
               </div>
-              <ul>
-                <li>Led product vision, MVP scope, sprint backlog, user story mapping and team alignment for an AI Learning Path Generator using Jira, GitHub Projects and Mural.</li>
-                <li>Facilitated asynchronous delivery across the UK, Nigeria, New York, China and Mexico and launched the MVP in 7 weeks with zero milestone delays.</li>
-              </ul>
             </div>
           </article>
 
-          <article class="timeline-item reveal">
-            <div class="timeline-date">2025 — Present</div>
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-head">
-                <div><h3>Program Management Lead</h3><p>Minth México · Aguascalientes</p></div>
-                <span>Current</span>
+          <!-- Snapshot 2 -->
+          <article class="transition-card reveal delay-1">
+            <span class="transition-step">PMO</span>
+            <div>
+              <p class="transition-status">MINTH MÉXICO · PROGRAM MANAGEMENT LEAD</p>
+              <h3 data-en="Digital Governance Across 20+ Global Launches" data-es="Gobernanza Digital para +20 Lanzamientos Globales">Digital Governance Across 20+ Global Launches</h3>
+              <p data-en="Replaced 100% of manual PowerPoint reporting with live Power BI + Jira dashboards across 9 OEM accounts, and standardized launch workflows across 5 plants." data-es="Eliminamos el 100% de reportes manuales en PPT creando tableros vivos en Power BI + Jira para 9 cuentas OEM, estandarizando procesos en 5 plantas.">Replaced 100% of manual PowerPoint reporting with live Power BI + Jira dashboards across 9 OEM accounts, and standardized launch workflows across 5 plants.</p>
+              <button type="button" class="card-detail-toggle" onclick="toggleCardDetail(this)">
+                <span data-en="+ View how we did it" data-es="+ Ver cómo lo logramos">+ View how we did it</span>
+              </button>
+              <div class="card-extra-detail">
+                <p data-en="Connected MS Project, Jira, and Power BI to track 450+ live action items, led the Plex-to-SAP master data migration, and coached 3 Program Managers in cross-border negotiation." data-es="Conectamos MS Project, Jira y Power BI para monitorear +450 acciones en vivo, liderando además la migración de datos maestros a SAP.">Connected MS Project, Jira, and Power BI to track 450+ live action items, led the Plex-to-SAP master data migration, and coached 3 Program Managers in cross-border negotiation.</p>
               </div>
-              <ul>
-                <li>Serve as the primary technical interface across hardware, software, mechanical, quality and manufacturing teams for 20+ active NPI programs and 9 OEM accounts, with CAPEX up to USD $20M per project.</li>
-                <li>Built a real-time Power BI + MS Project executive governance model, support global equipment buy-offs, validate business cases/capacity models and lead launch master-data setup across part numbers, routings, BOMs and work centers.</li>
-              </ul>
             </div>
           </article>
 
-          <article class="timeline-item reveal">
-            <div class="timeline-date">2023 — 2025</div>
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-head"><div><h3>Senior New Product Introduction Engineer</h3><p>ENNOVI de México · Jalisco</p></div></div>
-              <ul>
-                <li>Led the Tesla Cybertruck launch through a China-to-Mexico tooling strategy with zero line downtime and full customer absorption of temporary tooling/freight costs.</li>
-                <li>Used process capability analysis to eliminate a 100% end-of-line inspection station, reuse CAPEX on a parallel Tesla program and deliver an additional $70K in supplier/material savings.</li>
-              </ul>
+          <!-- Snapshot 3 -->
+          <article class="transition-card reveal delay-2">
+            <span class="transition-step">NPI</span>
+            <div>
+              <p class="transition-status">ENNOVI & TENNECO · GLOBAL LAUNCHES</p>
+              <h3 data-en="Tesla Cybertruck Launch & Mercedes-Benz Recovery" data-es="Lanzamiento Tesla Cybertruck y Rescate Mercedes-Benz">Tesla Cybertruck Launch & Mercedes-Benz Recovery</h3>
+              <p data-en="Coordinated a 6-phase China-to-Mexico launch strategy for Tesla with zero downtime, and led a $1.8M account turnaround for Mercedes-Benz (37 to 0 deviations)." data-es="Coordinamos una estrategia de 6 fases China-México para Tesla sin paros de línea, y logramos una recuperación de $1.8M USD para Mercedes-Benz (de 37 a 0 desviaciones).">Coordinated a 6-phase China-to-Mexico launch strategy for Tesla with zero downtime, and led a $1.8M account turnaround for Mercedes-Benz (37 to 0 deviations).</p>
+              <button type="button" class="card-detail-toggle" onclick="toggleCardDetail(this)">
+                <span data-en="+ View how we did it" data-es="+ Ver cómo lo logramos">+ View how we did it</span>
+              </button>
+              <div class="card-extra-detail">
+                <p data-en="Combined C-level customer negotiation, CAPEX vs. tooling financial analysis ($244K+ combined direct savings), and shop-floor team empowerment to eliminate bottlenecks." data-es="Combinamos negociación transparente con el cliente, análisis financiero CAPEX/Tooling ($244K+ USD en ahorros directos) y empoderamiento del equipo en piso.">Combined C-level customer negotiation, CAPEX vs. tooling financial analysis ($244K+ combined direct savings), and shop-floor team empowerment to eliminate bottlenecks.</p>
+              </div>
             </div>
           </article>
+        </div>
 
-          <article class="timeline-item reveal">
-            <div class="timeline-date">2020 — 2023</div>
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-head"><div><h3>Program Manager</h3><p>Tenneco México · Aguascalientes</p></div><span>2 promotions</span></div>
-              <ul>
-                <li>Led an intercontinental Mercedes-Benz program across Mexico, USA, Germany and China, reporting concise data-backed status directly to executive leadership.</li>
-                <li>Delivered a $1.8M net profit turnaround by restructuring quality decision workflows and preventive root-cause engineering, eliminating customer deviations from 37 to zero and recurring line stoppages.</li>
-              </ul>
-            </div>
-          </article>
-                  <article class="timeline-item reveal">
-            <div class="timeline-date">2014 — 2020</div>
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-head"><div><h3>Earlier Technical Foundation</h3><p>Sensata Technologies · Nilfisk · Minth Group</p></div></div>
-              <ul>
-                <li>Reduced manufacturing fallout on Tesla pressure/temperature sensors from 80–85% to under 5% through cross-functional root-cause redesign and received a team Global Engineering Award.</li>
-                <li>Managed 15+ electrical/electronic suppliers across the Americas and led APQP/PPAP readiness, 8D problem solving, technical audits, equipment buy-offs, robotics validation and international technology transfer across China, Germany, the US and Mexico.</li>
-              </ul>
-            </div>
-          </article>
+        <!-- PROGRESSIVE DISCLOSURE BUTTON FOR FULL CAREER TIMELINE -->
+        <div class="expand-trigger-wrap reveal">
+          <button type="button" class="btn-expand" id="timelineToggleBtn" onclick="toggleTimeline()">
+            <span data-en="View full career timeline (2011 – Present) ↓" data-es="Ver trayectoria completa (2011 – Presente) ↓">View full career timeline (2011 – Present) ↓</span>
+          </button>
+        </div>
+
+        <!-- COLLAPSIBLE TIMELINE (HIDDEN UNTIL CLICKED SO THE PAGE STAYS CLEAN) -->
+        <div class="collapsible-drawer" id="careerDrawer">
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-date">2026 — Present</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-head">
+                  <div><h3>Product Owner / Scrum Master</h3><p>Chingu.io · Global AI Product Fellowship</p></div>
+                  <span>Current</span>
+                </div>
+                <ul>
+                  <li data-en="Guided product strategy and agile delivery for an AI Learning Path Generator across 5 countries, launching the MVP in 7 weeks." data-es="Guié la estrategia de producto y entrega ágil para una plataforma de IA en 5 países, lanzando el MVP en 7 semanas.">Guided product strategy and agile delivery for an AI Learning Path Generator across 5 countries, launching the MVP in 7 weeks.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-date">2026 — Present</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-head">
+                  <div><h3>Program Management Lead</h3><p>Minth México · Aguascalientes</p></div>
+                  <span>Current</span>
+                </div>
+                <ul>
+                  <li data-en="Lead a portfolio of 20+ NPI programs across 9 OEMs, automating executive visibility with Power BI/Jira and leading Plex-to-SAP ERP master data migration." data-es="Lidero un portafolio de +20 programas NPI para 9 OEMs, automatizando la visibilidad en Power BI/Jira y la migración de datos maestros a SAP.">Lead a portfolio of 20+ NPI programs across 9 OEMs, automating executive visibility with Power BI/Jira and leading Plex-to-SAP ERP master data migration.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-date">2023 — 2025</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-head"><div><h3>Sr. APQP Engineer / NPI Technical Lead</h3><p>ENNOVI de México</p></div></div>
+                <ul>
+                  <li data-en="Led the 6-phase Tesla Cybertruck launch strategy across China, the US, and Mexico, saving a full inspection station via SPC and $70K in packaging redesign." data-es="Lideré la estrategia de lanzamiento en 6 fases para Tesla Cybertruck entre China, EE.UU. y México, ahorrando una estación completa vía SPC y $70K USD en empaque.">Led the 6-phase Tesla Cybertruck launch strategy across China, the US, and Mexico, saving a full inspection station via SPC and $70K in packaging redesign.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-date">2020 — 2023</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-head"><div><h3>Global Program Manager (Americas)</h3><p>Tenneco México</p></div><span>2 promotions</span></div>
+                <ul>
+                  <li data-en="Delivered a $1.8M USD turnaround on the Mercedes-Benz MFA2 account (37 to 0 deviations) and saved $174K USD in launch budget through CAPEX/tooling optimization." data-es="Logré una recuperación de $1.8M USD en la cuenta Mercedes-Benz MFA2 (37 a 0 desviaciones) y ahorré $174K USD optimizando presupuestos CAPEX/Tooling.">Delivered a $1.8M USD turnaround on the Mercedes-Benz MFA2 account (37 to 0 deviations) and saved $174K USD in launch budget through CAPEX/tooling optimization.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-date">2011 — 2020</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-head"><div><h3>Quality & Launch Engineering Foundation</h3><p>Sensata Technologies · Nilfisk · Minth Group · POSCO</p></div></div>
+                <ul>
+                  <li data-en="Won the Annual Global Engineering Award at Sensata (-30% field defects for GM, Tesla, Ford) and completed international engineering deployments in China and Germany." data-es="Ganador del Global Engineering Award en Sensata (-30% defectos en campo para GM, Tesla y Ford) con estancias técnicas en China y Alemania.">Won the Annual Global Engineering Award at Sensata (-30% field defects for GM, Tesla, Ford) and completed international engineering deployments in China and Germany.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- SECTION 03: COMPACT TOOLKIT & CREDENTIALS -->
     <section class="section shell" id="tech">
       <div class="section-heading reveal">
         <span class="section-index">03</span>
         <div>
-          <p class="eyebrow-text">Tech & credentials</p>
-          <h2>How I deliver across product, operations, data and technology.</h2>
+          <p class="eyebrow-text" data-en="Toolkit & Credentials" data-es="Herramientas y Certificaciones">Toolkit & Credentials</p>
+          <h2 data-en="Ready to plug into your workflow." data-es="Listo para integrarme al flujo de tu equipo.">Ready to plug into your workflow.</h2>
         </div>
       </div>
 
       <div class="skills-grid">
         <article class="skill-card reveal">
           <span class="skill-icon">PM</span>
-          <h3>Program Delivery · Used at work</h3>
-          <p>Waterfall product development, Agile/Scrum software delivery, hybrid project delivery, change and risk management, schedule/budget/CAPEX, customer management and matrixed stakeholder alignment.</p>
+          <h3 data-en="Program & Product Delivery" data-es="Dirección de Programas y Producto">Program & Product Delivery</h3>
+          <p data-en="Agile/Scrum, Hybrid Waterfall, NPI Governance, P&L & CAPEX Management, Executive Risk Escalation." data-es="Agile/Scrum, Gestión Híbrida, Gobernanza NPI, Control de P&L y CAPEX, Mitigación de Riesgos.">Agile/Scrum, Hybrid Waterfall, NPI Governance, P&L & CAPEX Management, Executive Risk Escalation.</p>
         </article>
 
         <article class="skill-card reveal delay-1">
           <span class="skill-icon">DATA</span>
-          <h3>Data & Digital Governance · Used at work</h3>
-          <p>Power BI, advanced Excel, MS Project integration, executive portfolio dashboards, master-data setup, BOMs, process routings and work-center governance.</p>
+          <h3 data-en="Digital Systems & BI" data-es="Sistemas Digitales y BI">Digital Systems & BI</h3>
+          <p data-en="Jira, Power BI, MS Project, SAP (Master Data/BOMs), GitHub Projects, Confluence, Mural, Minitab." data-es="Jira, Power BI, MS Project, SAP (Datos Maestros/BOMs), GitHub Projects, Confluence, Mural, Minitab.">Jira, Power BI, MS Project, SAP (Master Data/BOMs), GitHub Projects, Confluence, Mural, Minitab.</p>
         </article>
 
         <article class="skill-card reveal delay-2">
-          <span class="skill-icon">PO</span>
-          <h3>Software Product Delivery · Hands-on</h3>
-          <p>Scrum, product vision, MVP scope, sprint backlog, user story mapping, Jira, GitHub Projects, Miro and Mural across a globally distributed product team.</p>
-        </article>
-
-        <article class="skill-card reveal">
-          <span class="skill-icon">AWS</span>
-          <h3>Enterprise & Collaboration Systems</h3>
-          <p>SAP, Plex, Oracle, Monday.com, MS Office, Google Workspace, MS Project, Jira, Miro and Mural — adaptable across PM, ERP, reporting and collaboration environments.</p>
-        </article>
-
-        <article class="skill-card reveal delay-1">
           <span class="skill-icon">ENG</span>
-          <h3>Engineering & NPI · Used at work</h3>
-          <p>SolidWorks, AutoCAD, GD&T, APQP/PPAP, Core Tools, VDA 6.3, IATF 16949, process validation, equipment buy-offs, supplier quality and production launch readiness.</p>
+          <h3 data-en="Hardware & Quality Standards" data-es="Ingeniería y Estándares Globales">Hardware & Quality Standards</h3>
+          <p data-en="APQP/PPAP, IATF 16949, VDA 6.3, ISO 21500, Six Sigma Green Belt, SolidWorks, GD&T." data-es="APQP/PPAP, IATF 16949, VDA 6.3, ISO 21500, Six Sigma Green Belt, SolidWorks, GD&T.">APQP/PPAP, IATF 16949, VDA 6.3, ISO 21500, Six Sigma Green Belt, SolidWorks, GD&T.</p>
         </article>
       </div>
-    
-      <div class="credential-cloud reveal compact-credential-strip">
-        <span class="featured">PMP® · PMI</span>
-        <span>AWS Cloud Practitioner</span>
-        <span>Advanced Scrum / Agile</span>
-        <span>Six Sigma Green Belt</span>
-        <span>VDA 6.3</span>
-        <span>IATF 16949</span>
-        <span>GD&amp;T</span>
-        <span>AIAG Core Tools</span>
-      </div>
 
+      <div class="credential-cloud reveal compact-credential-strip">
+        <span class="featured">MBA · Project Management</span>
+        <span class="featured">PMP® · PMI</span>
+        <span>Google Agile & PM Certified</span>
+        <span>Advanced Scrum Master</span>
+        <span>AWS Cloud Practitioner</span>
+        <span>Six Sigma Green Belt</span>
+        <span>IATF 16949 & VDA 6.3</span>
+      </div>
     </section>
 
-
+    <!-- SIMPLE, HUMAN, FRICTIONLESS CONTACT SECTION -->
     <section class="contact-section shell" id="contact">
       <div class="contact-card reveal">
         <div>
-          <p class="eyebrow-text">Let's connect</p>
-          <h2>Need someone who can bring structure, speed and accountability to a complex technical program?</h2>
-          <p>I am focused on Technical Program Management, Product Delivery and Digital Transformation roles where global engineering, operations, data and technology have to move together.</p>
+          <p class="eyebrow-text" data-en="Contact" data-es="Contacto">Contact</p>
+          <h2 data-en="Looking for someone to help your team deliver its next critical program?" data-es="¿Buscas a alguien que ayude a tu equipo a lograr su próximo gran objetivo?">Looking for someone to help your team deliver its next critical program?</h2>
+          <p data-en="Let's talk about the challenges your team is facing and how I can support your roadmap—whether in a remote, hybrid, or cross-border role." data-es="Platiquemos sobre los retos actuales de tu área y cómo puedo sumar a tu equipo en modalidad remota, híbrida o global.">Let's talk about the challenges your team is facing and how I can support your roadmap—whether in a remote, hybrid, or cross-border role.</p>
         </div>
         <div class="contact-actions">
-          <a class="btn btn-primary" href="mailto:barbasarce@gmail.com">Email me <span>↗</span></a>
+          <a class="btn btn-primary" href="mailto:barbasarce@gmail.com"><span data-en="Send Email" data-es="Enviar Correo">Send Email</span> <span>↗</span></a>
           <a class="btn btn-secondary" href="https://www.linkedin.com/in/francisco-arce-aguilar" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+          <a class="btn btn-secondary" href="https://wa.me/522221906623" target="_blank" rel="noreferrer">WhatsApp <span>↗</span></a>
         </div>
       </div>
     </section>
@@ -298,11 +444,43 @@
 
   <footer>
     <div class="shell footer-wrap">
-      <div><strong>Francisco Arce Aguilar</strong><span>Technical Program Management · Product Delivery · Digital Transformation</span></div>
-      <p>© <span id="year"></span></p>
+      <div><strong>Francisco Arce Aguilar</strong><span>MBA · PMP® · Technical Program Management & Product Delivery</span></div>
+      <p>© <span id="year">2026</span></p>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    let lang = 'en';
+    function toggleLanguage() {
+      lang = lang === 'en' ? 'es' : 'en';
+      document.getElementById('langSwitch').textContent = lang === 'en' ? 'ES 🇲🇽' : 'EN 🇺🇸';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+    }
+
+    function toggleCardDetail(btn) {
+      const detail = btn.nextElementSibling;
+      const isOpen = detail.classList.toggle('open');
+      const span = btn.querySelector('span');
+      if (isOpen) {
+        span.textContent = lang === 'en' ? '− Hide details' : '− Ocultar detalles';
+      } else {
+        span.textContent = lang === 'en' ? '+ View how we did it' : '+ Ver cómo lo logramos';
+      }
+    }
+
+    function toggleTimeline() {
+      const drawer = document.getElementById('careerDrawer');
+      const btnSpan = document.querySelector('#timelineToggleBtn span');
+      const isOpen = drawer.classList.toggle('open');
+      if (isOpen) {
+        btnSpan.textContent = lang === 'en' ? 'Hide full career timeline ↑' : 'Ocultar trayectoria completa ↑';
+      } else {
+        btnSpan.textContent = lang === 'en' ? 'View full career timeline (2011 – Present) ↓' : 'Ver trayectoria completa (2011 – Presente) ↓';
+      }
+    }
+  </script>
 </body>
 </html>
